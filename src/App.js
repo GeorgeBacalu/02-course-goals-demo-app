@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
-import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
+import CourseGoalList from "./components/CourseGoals/CourseGoalList";
+import CourseInput from "./components/CourseGoals/CourseInput";
 import "./App.css";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
   if (courseGoals.length > 0) content = <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />;
 
   return (
-    <div>
+    <>
       <section id="goal-form">
         <CourseInput onAddGoal={addGoalHandler} />
       </section>
@@ -32,7 +32,7 @@ const App = () => {
         {/* {courseGoals.length > 0 && <CourseGoalList items={courseGoals} onDeleteItem={deleteItemHandler} />}
         {courseGoals.length === 0 && <p style={{ textAlign: "center" }}>No goals found. Maybe add one?</p>} */}
       </section>
-    </div>
+    </>
   );
 };
 
